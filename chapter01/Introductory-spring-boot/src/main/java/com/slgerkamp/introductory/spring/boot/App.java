@@ -1,13 +1,30 @@
 package com.slgerkamp.introductory.spring.boot;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
- * Hello world!
+ * Webアプリケーション作成
+ * 
+ * コントローラークラス作成
+ * 自動設定を有効に
+ * HTTPリクエストのパス設定
+ * HTTPレスポンスの記述
+ * Spring bootアプリケーションの実行
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+@RestController
+@EnableAutoConfiguration
+public class App {
+	
+	@RequestMapping("/")
+	String home(){
+		return "Hello, Spring boot";
+	}
+	
+    public static void main( String[] args ){
+        SpringApplication.run(App.class, args);
     }
 }
