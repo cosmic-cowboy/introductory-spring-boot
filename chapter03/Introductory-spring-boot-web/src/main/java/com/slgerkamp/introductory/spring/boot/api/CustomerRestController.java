@@ -1,11 +1,11 @@
 package com.slgerkamp.introductory.spring.boot.api;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
-
 
 import com.slgerkamp.introductory.spring.boot.domain.Customer;
 import com.slgerkamp.introductory.spring.boot.service.CustomerService;
@@ -36,8 +36,8 @@ public class CustomerRestController {
 	 * @return 
 	 */
 	@RequestMapping(method = RequestMethod.GET)
-	List<Customer> getCustomers(){
-		return customerService.findAll();
+	Page<Customer> getCustomers(@PageableDefault Pageable pageable){
+		return customerService.findAll(pageable);
 	}
 	
 	/**

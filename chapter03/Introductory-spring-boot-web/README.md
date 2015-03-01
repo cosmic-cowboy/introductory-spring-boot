@@ -35,3 +35,8 @@ $ curl localhost:8080/api/customers/5 -v -X PUT -H "Content-Type: application/js
 ```
 $ curl localhost:8080/api/customers/5 -v -X DELETE
 ```
+
+取得（ページング）
+```
+$ curl -X GET "localhost:8080/api/customers?page=0&size=3"
+```
