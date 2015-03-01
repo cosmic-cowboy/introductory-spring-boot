@@ -37,6 +37,10 @@
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
         <!-- http://mvnrepository.com/artifact/org.lazyluke/log4jdbc-remix -->
         <dependency>
             <groupId>org.lazyluke</groupId>
